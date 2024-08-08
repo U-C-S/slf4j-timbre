@@ -3,9 +3,9 @@
   :url "https://github.com/fzakaria/slf4j-timbre"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.11.1"]
-                 [com.taoensso/timbre "6.3.1"]
-                 [org.slf4j/slf4j-api "2.0.9"]]
+  :dependencies [[org.clojure/clojure "1.11.4"]
+                 [com.taoensso/timbre "6.5.0"]
+                 [org.slf4j/slf4j-api "2.0.14"]]
   :profiles {:dev
              {:dependencies [[midje "1.10.9"]]
               :plugins [[lein-midje "3.2.2"]
