@@ -14,7 +14,7 @@
   (let [default-config (var-get (resolve 'taoensso.timbre/example-config))]
     (when (and (compare-and-set! bootstrapped? false true)
                (= (dissoc timbre/*config* :_init-config) default-config))
-      (let [level (or (System/getProperty "TIMBRE_LEVEL") (System/getenv "TIMBRE_LEVEL") ":info")]
+      (let [level (or @#'timbre/compile-time-min-level :info)]
         (reset! slf4j-timbre.adapter/override-level (keyword (subs level 1))))
       (add-watch #'timbre/*config* ::on-first-config
                  (fn [_ _ _ _]
